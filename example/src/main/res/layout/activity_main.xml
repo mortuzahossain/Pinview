@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              android:id="@+id/activity_main"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="#e1e1e1"
-              android:orientation="vertical"
-              android:paddingLeft="@dimen/activity_horizontal_margin"
-              android:paddingTop="@dimen/activity_vertical_margin"
-              android:paddingRight="@dimen/activity_horizontal_margin"
-              android:paddingBottom="@dimen/activity_vertical_margin">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e1e1e1"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Number"/>
+        android:text="Number" />
 
     <com.goodiebag.pinview.Pinview
         android:id="@+id/pinview1"
@@ -28,12 +28,12 @@
         app:pinBackground="@drawable/example_drawable_with_grey_disabled"
         app:pinHeight="40dp"
         app:pinLength="4"
-        app:pinWidth="40dp"/>
+        app:pinWidth="40dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Text"/>
+        android:text="Text" />
 
     <com.goodiebag.pinview.Pinview
         android:id="@+id/pinview2"
@@ -47,12 +47,12 @@
         app:pinBackground="@drawable/example_drawable"
         app:pinHeight="40dp"
         app:pinLength="4"
-        app:pinWidth="40dp"/>
+        app:pinWidth="40dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Number-Password"/>
+        android:text="Number-Password" />
 
     <com.goodiebag.pinview.Pinview
         android:id="@+id/pinview3"
@@ -65,12 +65,12 @@
         app:pinBackground="@drawable/example_drawable"
         app:pinHeight="40dp"
         app:pinLength="4"
-        app:pinWidth="40dp"/>
+        app:pinWidth="40dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Text-Password"/>
+        android:text="Text-Password" />
 
     <com.goodiebag.pinview.Pinview
         android:id="@+id/pinview4"
@@ -83,12 +83,12 @@
         app:pinBackground="@drawable/example_drawable"
         app:pinHeight="40dp"
         app:pinLength="4"
-        app:pinWidth="40dp"/>
+        app:pinWidth="40dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Custom Pin View"/>
+        android:text="Custom Pin View" />
 
     <com.goodiebag.pinview.Pinview
         android:id="@+id/pinview5"
@@ -97,6 +97,12 @@
         app:inputType="text"
         app:pinHeight="40dp"
         app:pinLength="4"
-        app:pinWidth="40dp"/>
+        app:pinWidth="40dp" />
+
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Clear"/>
 
 </LinearLayout>

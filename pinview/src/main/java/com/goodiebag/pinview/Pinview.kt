@@ -303,6 +303,7 @@ class Pinview @JvmOverloads constructor(context: Context, attrs: AttributeSet? =
      */
     fun clearValue() {
         value = ""
+        clearFocus()
     }
 
     override fun onFocusChange(view: View, isFocused: Boolean) {

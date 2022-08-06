@@ -2,6 +2,7 @@ package com.goodiebag.pinview.example
 
 import android.graphics.Color
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.goodiebag.pinview.Pinview
@@ -28,5 +29,11 @@ class MainActivity : AppCompatActivity() {
             setTextColor(Color.BLACK)
             showCursor(true)
         }
+
+        val btnClear = findViewById<Button>(R.id.btnClear)
+        btnClear.setOnClickListener {
+            pinview5.clearValue()
+        }
+
     }
 }
