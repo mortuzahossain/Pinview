@@ -1,53 +1,43 @@
 # Pinview
-[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Pinview-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/5394)
-[![Release](https://jitpack.io/v/GoodieBag/Pinview.svg)](https://jitpack.io/#GoodieBag/Pinview)
-[![API](https://img.shields.io/badge/API-15%2B-blue.svg?style=flat)](https://android-arsenal.com/api?level=15)
-
- Pinview library for android :pouting_cat:
- 
-![alt tag](https://media.giphy.com/media/U5BP5gk9zQaqs/giphy.gif)       ![alt_tag](https://media.giphy.com/media/CnCvLh9NT6Hio/giphy.gif)
-
 ## Gradle Dependency
 
 Add this in your root build.gradle file at the end of repositories:
 ```java
 allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
+        repositories {
+                ...
+                maven { url 'https://jitpack.io' }
+        }
+}
 ```
 Add dependency:
 
-Latest Version:
-
-Has improvements and bug fixes - [Release notes](https://github.com/GoodieBag/Pinview/releases/tag/v1.5)
+Personalized Latest Version:
 ```java
 dependencies {
-	   implementation 'com.github.GoodieBag:Pinview:v1.5'
-	}
+        implementation 'com.github.mortuzahossain:Pinview:v1.0.0'
+}
 ```
-OR 
+OR
 
-Stable version : 
- 
+Stable version :
+
 ```java
 dependencies {
-	   implementation 'com.github.GoodieBag:Pinview:v1.4'
-	}
+        implementation 'com.github.GoodieBag:Pinview:v1.4'
+}
 ```
 Sync the gradle and that's it! :+1:
 
-### Features : 
- * Flawless focus change to the consecutive pin box when the text is entered/deleted.
- * When the user taps on the Pinview, the first empty box available is focused automatically (when the cursor is hidden).
- * Listeners for onDataEntered ( To call an API when the pin is entered) and touch exists.
- * Customisations are available for pin box sizes, background(drawables, selectors), inputType etc.
- 
+### Features :
+* Flawless focus change to the consecutive pin box when the text is entered/deleted.
+* When the user taps on the Pinview, the first empty box available is focused automatically (when the cursor is hidden).
+* Listeners for onDataEntered ( To call an API when the pin is entered) and touch exists.
+* Customisations are available for pin box sizes, background(drawables, selectors), inputType etc.
+
 ## Usage
 
-### XML : 
+### XML :
 ```xml
 <com.goodiebag.pinview.Pinview
         android:id="@+id/pinview"
@@ -65,7 +55,7 @@ Sync the gradle and that's it! :+1:
 ```
 This can be referenced in the java class by the ```findViewById``` method.
 
-##### Available xml attributes and explanations : 
+##### Available xml attributes and explanations :
 
 ```app:pinBackground``` : Sets the pin box's background, accepts a drawable or a selector drawable. When a ```selector``` is used, the focused pin box is highlighted. <br />
 ```app:pinWidth``` and ```app:pinHeight``` : Sets the width and height of the pinbox. <br />
@@ -79,7 +69,7 @@ This can be referenced in the java class by the ```findViewById``` method.
 
 ### Kotlin :
 
-To create the view programmatically : 
+To create the view programmatically :
 ```kotlin
 val pin = Pinview(this)
 ```
@@ -115,7 +105,7 @@ myLayout.addView(pin);
 
 ##### To get and set the pin values use the ```pin.getValue()``` and ```pin.setValue()``` methods respectively.
 
-There is an event listener which is triggered when the user is done entering the otp which can be used as follows : 
+There is an event listener which is triggered when the user is done entering the otp which can be used as follows :
 ```kotlin
  pin.setPinViewEventListener(object : PinViewEventListener {
             override fun onDataEntered(pinview: Pinview?, fromUser: Boolean) {
@@ -123,33 +113,8 @@ There is an event listener which is triggered when the user is done entering the
             }
         })
 ```
-#### Note : 
+#### Note :
 This library cannot be assured to work on 3rd party keyboards (especially when the cursor is off). It works as expected on google keyboards.
 We will be adding a work-around in the future releases.
 
-## LICENSE
-```
-MIT License
-
-Copyright (c) 2017 GoodieBag
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-
+## Special Thanks to @GoodieBag
