@@ -33,6 +33,8 @@ class MainActivity : AppCompatActivity() {
         val btnClear = findViewById<Button>(R.id.btnClear)
         btnClear.setOnClickListener {
             pinview5.clearValue()
+            // default is 0 or you can set exact position of cursor using this function
+            pinview5.setCursorAtPosition(3)
         }
 
     }

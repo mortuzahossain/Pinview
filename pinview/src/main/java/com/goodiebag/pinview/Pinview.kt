@@ -54,7 +54,12 @@ import kotlin.math.max
  * @author Pavan
  * @author Koushik
  */
-class Pinview @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : LinearLayout(context, attrs, defStyleAttr), TextWatcher, View.OnFocusChangeListener, View.OnKeyListener {
+class Pinview @JvmOverloads constructor(
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = 0
+) : LinearLayout(context, attrs, defStyleAttr), TextWatcher, View.OnFocusChangeListener,
+    View.OnKeyListener {
     private val DENSITY = getContext().resources.displayMetrics.density
 
     /**
@@ -172,7 +177,8 @@ class Pinview @JvmOverloads constructor(context: Context, attrs: AttributeSet? =
         mPinLength = array.getInt(R.styleable.Pinview_pinLength, mPinLength)
         mPinHeight = array.getDimension(R.styleable.Pinview_pinHeight, mPinHeight.toFloat()).toInt()
         mPinWidth = array.getDimension(R.styleable.Pinview_pinWidth, mPinWidth.toFloat()).toInt()
-        mSplitWidth = array.getDimension(R.styleable.Pinview_splitWidth, mSplitWidth.toFloat()).toInt()
+        mSplitWidth =
+            array.getDimension(R.styleable.Pinview_splitWidth, mSplitWidth.toFloat()).toInt()
         mTextSize = array.getDimension(R.styleable.Pinview_textSize, mTextSize.toFloat()).toInt()
         mCursorVisible = array.getBoolean(R.styleable.Pinview_cursorVisible, mCursorVisible)
         mPassword = array.getBoolean(R.styleable.Pinview_password, mPassword)
@@ -293,8 +299,12 @@ class Pinview @JvmOverloads constructor(context: Context, attrs: AttributeSet? =
 
     private fun openKeyboard() {
         if (mForceKeyboard) {
-            val inputMethodManager = context.getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
-            inputMethodManager?.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY)
+            val inputMethodManager =
+                context.getSystemService(Context.INPUT_METHOD_SERVICE) as? InputMethodManager
+            inputMethodManager?.toggleSoftInput(
+                InputMethodManager.SHOW_FORCED,
+                InputMethodManager.HIDE_IMPLICIT_ONLY
+            )
         }
     }
 
@@ -304,6 +314,17 @@ class Pinview @JvmOverloads constructor(context: Context, attrs: AttributeSet? =
     fun clearValue() {
         value = ""
         clearFocus()
+    }
+
+    /**
+     * Set Cursor Position in Pinview at user provided position
+     */
+    fun setCursorAtPosition(position: Int = 0) {
+        if (editTextList != null) {
+            if (editTextList.size - 1 >= position) {
+                editTextList[position].requestFocus()
+            } else editTextList[0].requestFocus()
+        }
     }
 
     override fun onFocusChange(view: View, isFocused: Boolean) {
@@ -383,7 +404,7 @@ class Pinview @JvmOverloads constructor(context: Context, attrs: AttributeSet? =
                 finalNumberPin = true
             }
         } else if (charSequence.isEmpty()) {
-            if(indexOfCurrentFocus < 0){
+            if (indexOfCurrentFocus < 0) {
                 return
             }
             val currentTag = indexOfCurrentFocus
@@ -436,7 +457,8 @@ class Pinview @JvmOverloads constructor(context: Context, attrs: AttributeSet? =
             val currentEditText = editTextList?.get(currentTag)?.text
             //Last tile of the number pad. Clear the edit text without changing the focus.
             if (inputType == InputType.NUMBER && currentTag == mPinLength - 1 && finalNumberPin ||
-                    mPassword && currentTag == mPinLength - 1 && finalNumberPin) {
+                mPassword && currentTag == mPinLength - 1 && finalNumberPin
+            ) {
                 if (!currentEditText.isNullOrEmpty()) {
                     this.editTextList?.get(currentTag)?.setText("")
                 }
