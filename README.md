@@ -15,7 +15,7 @@ Add dependency:
 Personalized Latest Version:
 ```java
 dependencies {
-        implementation 'com.github.mortuzahossain:Pinview:v1.0.0'
+	implementation 'com.github.mortuzahossain:Pinview:v1.0.1'
 }
 ```
 OR
@@ -104,7 +104,7 @@ myLayout.addView(pin);
 ```
 
 ##### To get and set the pin values use the ```pin.getValue()``` and ```pin.setValue()``` methods respectively.
-
+##### To clear and focus ```pin.clearValue()``` and ```pin.setCursorAtPosition(position)```  methods respectively.
 There is an event listener which is triggered when the user is done entering the otp which can be used as follows :
 ```kotlin
  pin.setPinViewEventListener(object : PinViewEventListener {
